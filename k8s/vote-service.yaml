@@ -1,9 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: vote
   name: vote
+  namespace: voting-app
 spec:
   type: NodePort
   ports:
@@ -13,4 +12,3 @@ spec:
     nodePort: 31002
   selector:
     app: vote
-  

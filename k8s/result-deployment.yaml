@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: vote
-  name: vote
+  name: result
+  namespace: voting-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vote
+      app: result
   template:
     metadata:
+      name: result
+      namespace: voting-app
       labels:
-        app: vote
+        app: result
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote
-        name: vote
+      - name: result
+        image: jojogojo/result-image
         ports:
         - containerPort: 80
-          name: vote
+          name: result

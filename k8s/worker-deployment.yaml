@@ -1,9 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: worker
   name: worker
+  namespace: voting-app
 spec:
   replicas: 1
   selector:
@@ -11,9 +10,14 @@ spec:
       app: worker
   template:
     metadata:
+      name: worker
+      namespace: voting-app
       labels:
         app: worker
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_worker
-        name: worker
+      - name: worker
+        image: jojogojo/worker-image
+        ports:
+        - containerPort: 80
+          name: worker
