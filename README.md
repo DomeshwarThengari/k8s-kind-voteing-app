@@ -6,7 +6,7 @@ A comprehensive, scalable 5-tier microservices application demonstrating how to 
 
 ## 🌟 Architecture Overview
 
-![Live DevOps Deployment Architecture](architecture.excalidraw.png)
+![Complete Deployment Architecture](k8s_voting_app_architecture.png)
 
 The application is a distributed voting system (cats vs. dogs) demonstrating asynchronous microservice communication:
 1. **Vote App (Python):** Front-end web app that accepts user votes (Port **5000**).
